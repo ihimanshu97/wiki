@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+{% load static %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block body %}
+    <section class="error">
+        <img src="{% static 'encyclopedia/error.svg' %}" alt="Not Found">
+        <h2>{{ message }}</h2>
+    </section>
+{% endblock %}

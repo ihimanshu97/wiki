@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }} - Edit
+{% endblock %}
+
+{% block body %}
+    <h1 class="mb-3">Update Page</h1>
+    <form action="/edit/{{ title }}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="title">Title</label>
+            <input type="text" value="{{ title }}" readonly disabled name="title" class="form-control" id="title" placeholder="Title">
+            </div>
+        <div class="form-floating mb-3">
+            <textarea name="content" class="form-control" placeholder="Content" id="content">{{ content }}</textarea>
+            <label for="content">Content</label>
+        </div>
+        <button class="btn btn-primary" type="submit"><i class="bi bi-pencil-square"></i> Update Page</button>
+    </form>
+{% endblock %}
